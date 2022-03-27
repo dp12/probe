@@ -1,0 +1,15 @@
+p() {
+  local depth=0
+  if [ "$#" -gt 0 ]; then
+      depth="$1"
+  fi
+  echo "$depth" > ~/.p_depth
+
+  local num_dirs="$(ls -l | grep '^d' | wc -l)"
+  case $num_dirs in
+    0) echo "no directories"; ;;
+    1) cd "$(ls -d ./*/)"; ;;
+    *) cd "$(find ./*/ -maxdepth $depth -type d -not -path '*/\.*' | fzf --bind 'ctrl-f:reload(~/.p_reload.sh $(pwd))')"; ;;
+  esac
+  "$LS_EXE"
+}
