@@ -14,6 +14,8 @@ but something in between.
 
 During a probe session, to cd into directories deeper than one level below the current directory, run `Ctrl-F` to add one level to the directory candidates.
 
+You can also press `Ctrl-H` to toggle showing hidden directories.
+
 probe is compatible with bash, zsh, and sh.
 
 ## Speed Comparison

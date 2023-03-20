@@ -3,6 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 cp $SCRIPT_DIR/.p_reload.sh ~/
+cp $SCRIPT_DIR/.p_hidden.sh ~/
 
 if [ -f "$HOME/.bashrc" ]; then
   echo "Add probe to .bashrc? [y/n]"
